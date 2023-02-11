@@ -7,10 +7,9 @@ background: rgb(131,58,180);
 background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 `;
 export const MainContainer = styled.div`
-    min-height: 600px;
-    width: 40vw;
-    margin-left: 50%;
-    translate: calc(-50%);
+    
+    width: 50%;
+    margin-left: 0 10px;
     background-color: ${mainColor};
     display: flex;
     flex-direction: column;
@@ -30,12 +29,12 @@ export const Title = styled.span`
    ${secGradiant};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
-    font-size: 80px;
+    font-size: 5vw;
 `
 export const SubTitle = styled.div`
     color:#7131c6; 
     text-transform: capitalize;
-    font-size: 40px;
+    font-size: 4vw;
 `
 export const Balance = styled.span`
     color:#1fc075;

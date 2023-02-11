@@ -10,9 +10,8 @@ const ExpenseField = ({ transaction }) => {
             <Type color={type === "income" ? "green" : "red"}>{type === "income" ? "+" : "-"}</Type>
             <Balance>{amount}$</Balance>
             <Categorie>{name}</Categorie>
-            <Date>2020-11-16</Date>
+            <Date>{2020 - 11 - 16}</Date>
             <RemoveIcon onClick={() => removeTransaction(id)}><TrashIcon /></RemoveIcon>
-
         </Container>
     )
 }

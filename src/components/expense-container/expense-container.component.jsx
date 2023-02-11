@@ -5,7 +5,6 @@ import { useContext } from "react"
 import { TransactionsContext } from "../../context/transactions.context"
 const ExpenseContainer = () => {
     const { transactions } = useContext(TransactionsContext);
-    console.log(transactions);
     return (
         <ExpenseDashBoard>
             {

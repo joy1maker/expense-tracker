@@ -1,11 +1,13 @@
-import './App.css';
+import { AppConainer } from './App.styles.jsx';
 import MainWindow from './components/main-window/main-window.component';
-
+import SecondryWindow from './components/secondry-window/secondry-window.component';
 function App() {
   return (
-    <div >
+    <AppConainer>
+      <SecondryWindow type={"expense"} />
       <MainWindow />
-    </div>
+      <SecondryWindow type={"income"} />
+    </AppConainer>
   );
 }
 

@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 // eslint-disable-next-line
-import { incomeColors, expenseColors } from "../assets/catigores";
 import { v4 as uuid } from 'uuid';
 /*
 transaction:{
@@ -33,6 +32,8 @@ export const TransactionsContext = createContext({
     setIncome: () => { },
     removeTransaction: () => { },
     total: 0,
+    filterTransaction: () => { },
+
 })
 
 export const TransactionsProvider = ({ children }) => {
@@ -58,14 +59,17 @@ export const TransactionsProvider = ({ children }) => {
     const removeTransaction = (id) => {
         setTransaction(removeTransactionHandler(transactions, id));
     }
-
+    const filterTransaction = (type) => {
+        return transactions.filter((transaction) => transaction.type === type)
+    }
 
     const value = {
         transactions,
         setExpense,
         setIncome,
         total,
-        removeTransaction
+        removeTransaction,
+        filterTransaction
     };
     return <TransactionsContext.Provider value={value}>{children}</TransactionsContext.Provider>
 }

@@ -19,7 +19,7 @@ const Form = () => {
         const { name, value } = e.target;
         setFromData({ ...formData, [name]: value });
     }
-    const addHandler = (id) => {
+    const addHandler = () => {
         const { type, name } = formData;
         if (!name.length) {
             alert("you can't leave the name empty")
@@ -29,10 +29,14 @@ const Form = () => {
         type === "income" ? setIncome(formData) : setExpense(formData);
         setFromData(initialState);
     }
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            addHandler();
+        }
+    }
 
     return (
-        <Container>
-
+        <Container onKeyDown={handleKeyPress}>
             <Type name="type"
                 id="type"
                 value={formData.type}
@@ -56,8 +60,9 @@ const Form = () => {
                 type={"number"}
                 placeholder={"amount of the transaction"}
                 min="0"
+
             />
-            <Button onClick={addHandler}>add item</Button>
+            <Button onClick={addHandler} >add item</Button>
 
         </Container>
     )

@@ -8,28 +8,33 @@ export const Container = styled.div`
     margin-bottom: 30px;
 `
 export const Type = styled.span`
-    width: 10%;
+    width: 25%;
     color: ${({ color }) => `${color}`};
-    font-size:75px;
-    margin-top:-30px;
+    font-size: 3vw;
+    text-align:center;
+    height:fit-content;
 `
 export const Balance = styled.span`
     width: 25%;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: lighter;
+    height:fit-content;
 `
 export const Categorie = styled.span`
     width: 25%;
     text-transform: capitalize;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: lighter;
+    height:fit-content;
 `
 export const Date = styled.span`
-    width: 30%;
-    font-size: 40px;
+    width: 25%;
+    font-size: 2vw;
     font-weight: lighter;
+    height:fit-content;
 `
 export const RemoveIcon = styled.span`
     width: 3%;
     cursor: pointer;
+    height:fit-content;
 `
