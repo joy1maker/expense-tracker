@@ -39,3 +39,9 @@ async def addTransaction(userID,transaction_name,transaction_type,transaction_am
     mycursor.execute(sql,vals)
     mydb.commit()
     return {"massage":"task added"}
+@app.delete('/transaction/{transactionID}')
+async def removeTransaction(transactionID):
+    sql=f"DELETE FROM `transactions` WHERE transaction_id={transactionID}"
+    mycursor.execute(sql)
+    mydb.commit()
+    return{"massage":"task deleted succsfully"}
