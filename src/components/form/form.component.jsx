@@ -1,6 +1,7 @@
-import { Type, Container, Name, Button, Amount } from "./form.styles";
+import { Type, Container, Name, Button, Amount, HypirdText } from "./form.styles";
 import { useState, useContext } from "react";
 import { TransactionsContext } from "../../context/transactions.context";
+import { UserContext } from "../../context/user.context";
 
 const initialState = {
     name: "",
@@ -14,6 +15,8 @@ const initialState = {
 const Form = () => {
     const { setExpense, setIncome } = useContext(TransactionsContext);
     const [formData, setFromData] = useState(initialState);
+    const { logoutHandle } = useContext(UserContext)
+
 
     const InputHandler = (e) => {
         const { name, value } = e.target;
@@ -34,6 +37,7 @@ const Form = () => {
             addHandler();
         }
     }
+
 
     return (
         <Container onKeyDown={handleKeyPress}>
@@ -63,7 +67,7 @@ const Form = () => {
 
             />
             <Button onClick={addHandler} >add item</Button>
-
+            <HypirdText onClick={logoutHandle}>log out</HypirdText>
         </Container>
     )
 }

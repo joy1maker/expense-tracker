@@ -65,6 +65,13 @@ export const Button = styled.button`
     transition: all 0.5s ease-in-out;
     &:hover{
         transform:scale(1.2);
+    }   
+`
+export const HypirdText = styled.div`
+    color:blue;
+    &:hover{
+        text-decoration: underline;
+        color: #f32c2c;
+        cursor: pointer;
     }
-    
 `
